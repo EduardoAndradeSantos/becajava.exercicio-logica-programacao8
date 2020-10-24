@@ -10,10 +10,20 @@ public class LogicaUsada {
 		int[] array = new int[10]; // cria 10 posições
 		int contador = 0; // contador inicia com 0
 
-		while (contador < 10) {
-			System.out.println("Insira um numero: ");
-			array[contador] = leitor.nextInt(); // guarda o valor na posição
-			contador++; // contador recebe +1
+		while (Contador < 10) {
+
+			//try tenta executar sem erros
+			try { 
+				System.out.println("Insira um numero: ");
+				Array[Contador] = leitor.nextInt(); // guarda o valor na posição
+				Contador++; // contador recebe +1
+			}
+			
+			//catch se der erro no try ele executa a mensageme continua lendo
+			catch (java.util.InputMismatchException e) {
+				System.out.println("!Só numeros são aceitos!");
+				leitor.nextLine(); // continua lendo
+			}
 		}
 
 		Arrays.sort(array); // organiza valores do array em ordem

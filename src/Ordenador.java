@@ -13,10 +13,19 @@ public class Ordenador {
 	}
 
 	public void insereNumeros() {
+
 		while (Contador < 10) {
-			System.out.println("Insira um numero: ");
-			Array[Contador] = leitor.nextInt(); // guarda o valor na posição
-			Contador++; // contador recebe +1
+
+			try {
+				System.out.println("Insira um numero: ");
+				Array[Contador] = leitor.nextInt(); // guarda o valor na posição
+				Contador++; // contador recebe +1
+			}
+
+			catch (java.util.InputMismatchException e) {
+				System.out.println("!Só numeros são aceitos!");
+				leitor.nextLine(); // continua lendo
+			}
 		}
 	}
 
